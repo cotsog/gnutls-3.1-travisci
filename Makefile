@@ -39,7 +39,7 @@ installCurl:
 	wget http://curl.haxx.se/download/curl-7.42.1.tar.gz
 	tar -xzf curl-7.42.1.tar.gz
 	cd curl-7.42.1 && ./configure --with-gnutls=/usr/local/lib
-	LDFLAGS="-L/usr/local/lib:$LDFLAGS" make
+	LDFLAGS="-L/usr/local/lib" make
 	( make check || echo "curl/make check failed" ) && sudo make install
 	#cd /usr/lib/x86_64-linux-gnu/ && sudo rm libcurl.a libcurl.la libcurl.so libcurl.so.3 libcurl.so.4
 	sudo ldconfig -v
